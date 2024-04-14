@@ -1,6 +1,9 @@
 {
-    "require": {
-        "mpdf/mpdf": "^8.0",
-        "aws/aws-sdk-php": "^3.224"
-    }
+  "require": {
+    "mpdf/mpdf": "^8.0",
+    "aws/aws-sdk-php": "^3.224",
+    "setasign/fpdi": "^2.3.6",
+    "tecnickcom/tc-lib-pdf": "^8.0",
+    "smalot/pdfparser": "^2.9"
+  }
 }

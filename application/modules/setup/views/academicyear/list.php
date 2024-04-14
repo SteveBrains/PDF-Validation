@@ -10,7 +10,8 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
           <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+              aria-controls="collapseOne">
               Advanced Search
             </a>
           </h4>
@@ -26,16 +27,16 @@
                       <div class="col-sm-8">
                         <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
                       </div>
-                    </div>  
+                    </div>
+                  </div>
+
                 </div>
-               
-              </div>
-              <div class="app-btn-group">
-                <button type="submit" class="btn btn-primary">Search</button>
-                <a href='list' class="btn btn-link">Clear All Fields</a>
+                <div class="app-btn-group">
+                  <button type="submit" class="btn btn-primary">Search</button>
+                  <a href='list' class="btn btn-link">Clear All Fields</a>
+                </div>
               </div>
             </div>
-          </div>
         </form>
       </div>
     </div>
@@ -44,31 +45,39 @@
       <table class="table" id="list-table">
         <thead>
           <tr>
-             <th>Sl. No</th>
+            <th>Sl. No</th>
             <th>Name</th>
             <th>Start Date</th>
             <th>End Date</th>
-            <th  style="text-align: center;">Action</th>
+            <th style="text-align: center;">Action</th>
           </tr>
         </thead>
         <tbody>
           <?php
           if (!empty($academicyearRecords)) {
-            $i=1;
+            $i = 1;
             foreach ($academicyearRecords as $record) {
-          ?>
+              ?>
               <tr>
-                <td><?php echo $i ?></td>
-                <td><?php echo $record->name ?></td>
-                <td><?php echo $record->start_date ?></td>
-                <td><?php echo $record->end_date ?></td>
+                <td>
+                  <?php echo $i ?>
+                </td>
+                <td>
+                  <?php echo $record->name ?>
+                </td>
+                <td>
+                  <?php echo $record->start_date ?>
+                </td>
+                <td>
+                  <?php echo $record->end_date ?>
+                </td>
                 <td class="text-center">
                   <a href="<?php echo 'edit/' . $record->id; ?>" title="Edit">Edit</a>
                   <!-- <a class="btn btn-sm btn-danger deleteRole" href="#" data-id="<?php echo $record->userId; ?>" title="Delete"><i class="fa fa-trash"></i></a> -->
                 </td>
               </tr>
-          <?php
-          $i++;
+              <?php
+              $i++;
             }
           }
           ?>
@@ -81,8 +90,7 @@
   </footer>
 </div>
 <script>
-      function clearSearchForm()
-      {
-        window.location.reload();
-      }
+  function clearSearchForm() {
+    window.location.reload();
+  }
 </script>
