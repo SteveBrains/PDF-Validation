@@ -33,3 +33,16 @@ ERROR - 2024-04-18 10:59:00 --> 404 Page Not Found: ../modules/examination/contr
 ERROR - 2024-04-18 11:08:50 --> 404 Page Not Found: ../modules/examination/controllers/Subject/index
 ERROR - 2024-04-18 11:08:59 --> 404 Page Not Found: ../modules/examination/controllers/Subject/approvemarks3
 ERROR - 2024-04-18 11:09:01 --> 404 Page Not Found: ../modules/examination/controllers/Subject/approvemarks
+ERROR - 2024-04-18 13:49:00 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:51:32 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:54:44 --> 404 Page Not Found: Verification/index
+ERROR - 2024-04-18 13:55:03 --> 404 Page Not Found: Verification/index
+ERROR - 2024-04-18 13:55:10 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:55:39 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:55:40 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:55:41 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:55:41 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:55:41 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 13:55:47 --> Severity: error --> Exception: Unable to locate the model you have specified: Verification_model /Applications/XAMPP/xamppfiles/htdocs/college/system/core/Loader.php 348
+ERROR - 2024-04-18 14:01:13 --> 404 Page Not Found: /index
+ERROR - 2024-04-18 14:01:38 --> 404 Page Not Found: /index
