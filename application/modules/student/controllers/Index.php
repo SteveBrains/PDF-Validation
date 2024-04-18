@@ -14,28 +14,9 @@ class Index extends BaseController
 
     function index()
     {
-        $data['subjectList'] = $this->candidate_model->getSubjects($_SESSION['userId'], $_SESSION['college_id'], $_SESSION['semester_id'], $_SESSION['course_id']);
-        $data['optionalSubjectList'] = $this->candidate_model->getStudentOptionalSubjects($_SESSION['userId']);
+        $data['placementList'] = $this->candidate_model->getCandidatePlacements($_SESSION['userId']);
         // echo "<pre>";print_r($data);die;
-        $this->loadViews("index/subjects", $this->global, $data, NULL);
-    }
-    function optional()
-    { 
-        if ($this->input->post()) {
-
-            $subjects = $this->security->xss_clean($this->input->post('subjects'));
-            foreach ($subjects as $row) {
-                $data = array(
-                    "subject_id" => $row,
-                    "student_id" => $_SESSION['userId'],
-                    "status" => 0
-                );
-                $this->candidate_model->addStudentSubject($data);
-            }
-        }
-        $data['subjectList'] = $this->candidate_model->getOptionalSubjects($_SESSION['userId'], $_SESSION['college_id'], $_SESSION['semester_id'], $_SESSION['course_id']);
-        // echo "<pre>";print_r($data);die;
-        $this->loadViews("index/optional", $this->global, $data, NULL);
+        $this->loadViews("index/placements", $this->global, $data, NULL);
     }
     function placed()
     {

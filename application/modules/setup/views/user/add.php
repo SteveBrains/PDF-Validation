@@ -18,14 +18,8 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label>First Name <span class='error-text'>*</span></label>
-                            <input type="text" class="form-control" id="first_name" name="first_name">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label>Last Name <span class='error-text'>*</span></label>
-                            <input type="text" class="form-control" id="last_name" name="last_name">
+                            <label>Full Name <span class='error-text'>*</span></label>
+                            <input type="text" class="form-control" id="fname" name="fname">
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -40,7 +34,8 @@
                             <input type="text" class="form-control" id="mobile" name="mobile">
                         </div>
                     </div>
-                
+                </div>
+                <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Password <span class='error-text'>*</span></label>
@@ -71,7 +66,6 @@
                             </select>
                         </div>
                     </div>
-                    
                 </div>
                 <div class="button-block clearfix">
                     <div class="bttn-group">

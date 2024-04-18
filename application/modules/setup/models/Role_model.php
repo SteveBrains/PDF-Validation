@@ -168,34 +168,18 @@ class Role_model extends CI_Model
         $result = $query->row();
         return $result;
     }
-    function getRoleChildMenus($menu)
-    {
-        $role = $_SESSION['role'];
-        $this->db->select('m.*');
-        $this->db->from('menu as m');
-        $this->db->where('m.status', 1);
-        $this->db->where('m.parent_id', $menu);
-        $this->db->where('m.id in(select id_menu from role_menus where id_role ='.$role.' )');
-        $this->db->order_by("m.order", "ASC");
-        $query = $this->db->get();
-        $result = $query->result();
-        return $result;
-    }
     function getMenuByModules($module) {
-        $role = $_SESSION['role'];
         $this->db->select('m.*');
         $this->db->from('menu as m');
         $this->db->where('m.status', 1);
         $this->db->where('m.parent_id', 0);
         $this->db->where('m.module', $module);
-        $this->db->where('m.id in(select id_menu from role_menus where id_role ='.$role.' )');
         $this->db->order_by("m.order", "ASC");
         $query = $this->db->get();
         $result = $query->result();
-        // echo "<pre>";print_r($result);die;
         foreach ($result as $key => $value) {
             $parent_id = $value->id;
-            $children = self::getRoleChildMenus($parent_id);
+            $children = self::getAllChildMenus($parent_id);
             $value->submenus = $children;
             $result[$key] = $value;
         }

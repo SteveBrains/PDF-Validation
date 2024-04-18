@@ -47,7 +47,7 @@
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
               </div>
               <div class="app-btn-group">
@@ -64,23 +64,23 @@
       <table class="table" id="list-table">
         <thead>
           <tr>
-             <th>Sl. No</th>
+            <th>Sl. No</th>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
             <th>Mobile</th>
-            <th  style="text-align: center;">Action</th>
+            <th style="text-align: center;">Action</th>
           </tr>
         </thead>
         <tbody>
           <?php
           if (!empty($userRecords)) {
-            $i=1;
+            $i = 1;
             foreach ($userRecords as $record) {
           ?>
               <tr>
                 <td><?php echo $i ?></td>
-                <td><?php echo $record->first_name.' '.$record->last_name ?></td>
+                <td><?php echo $record->first_name . ' ' . $record->last_name ?></td>
                 <td><?php echo $record->email ?></td>
                 <td><?php echo $record->roleName ?></td>
                 <td><?php echo $record->mobile ?></td>
@@ -90,7 +90,7 @@
                 </td>
               </tr>
           <?php
-          $i++;
+              $i++;
             }
           }
           ?>
@@ -98,13 +98,19 @@
       </table>
     </div>
   </div>
-  <footer class="footer-wrapper">
-    <p>&copy; 2023 All rights, reserved</p>
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <script>
+            document.write(new Date().getFullYear())
+          </script> © Catering Matrix.
+        </div>
+        <div class="col-sm-6">
+          <div class="text-sm-end d-none d-sm-block">
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 </div>
-<script>
-      function clearSearchForm()
-      {
-        window.location.reload();
-      }
-</script>

@@ -29,8 +29,8 @@
               <?php }
               ?>
               <div class="form-group">
-                <label for="username">Aadhar Number</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Aadhar Number" />
+                <label for="username">Registration Number</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Registration Number" />
               </div>
               <div class="form-group">
                 <label for="password">Password</label>

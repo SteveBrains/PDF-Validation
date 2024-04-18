@@ -4,15 +4,7 @@
 
 <script src="<?php echo BASE_PATH; ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo BASE_PATH; ?>/assets/js/jquery-validate.js"></script>
-
-<script src="<?php echo BASE_PATH; ?>/assets/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo BASE_PATH; ?>/assets/js/dataTables.buttons.min.js"></script>
-<script src="<?php echo BASE_PATH; ?>/assets/js/jszip.min.js"></script>
-<script src="<?php echo BASE_PATH; ?>/assets/js/pdfmake.min.js"></script>
-<script src="<?php echo BASE_PATH; ?>/assets/js/vfs_fonts.js"></script>
-<script src="<?php echo BASE_PATH; ?>/assets/js/buttons.html5.min.js"></script>
-<script src="<?php echo BASE_PATH; ?>/assets/js/buttons.print.min.js"></script>
-<!-- <script src="<?php echo BASE_PATH; ?>/assets/js/datatable.min.js"></script> -->
+<script src="<?php echo BASE_PATH; ?>/assets/js/datatable.min.js"></script>
 <script src="<?php echo BASE_PATH; ?>/assets/js/custom.js"></script>
 
 <script src="<?php echo BASE_PATH; ?>/assets/js/bootstrap-multiselect.js"></script>

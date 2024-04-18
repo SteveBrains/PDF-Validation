@@ -75,11 +75,11 @@ $query_builder = TRUE;
 $base_url = $_SERVER['HTTP_HOST'];
 if ($base_url == "patna.com") {
 	$db['default'] = array(
-		'dsn'	=> '',
+		'dsn' => '',
 		'hostname' => 'localhost',
 		'username' => 'root',
 		'password' => '',
-		'database' => 'patna',
+		'database' => 'cspm1',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => FALSE,
@@ -97,7 +97,7 @@ if ($base_url == "patna.com") {
 	);
 } else {
 	$db['default'] = array(
-		'dsn'	=> '',
+		'dsn' => '',
 		'hostname' => 'localhost',
 		'username' => 'root',
 		'password' => 'College123#',

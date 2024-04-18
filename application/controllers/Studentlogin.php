@@ -49,11 +49,11 @@ class Studentlogin extends BaseController
     {
         
         $sessionArray = array(
-            'userId' => $result->id,
+            'userId' => $result->Id,
             'name' => $result->name,
-            'college_id' => $result->college_id,
-            'semester_id' => $result->semester_id,
+            'training_center_id' => $result->training_center_id,
             'course_id' => $result->course_id,
+            'semester_id' => $result->semester_id,
             'isLoggedIn' => TRUE
         );
         $this->session->set_userdata($sessionArray);

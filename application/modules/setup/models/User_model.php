@@ -64,13 +64,4 @@ class User_model extends CI_Model
         $result = $query->result();
         return $result;
     }
-    function getTrainingCenters()
-    {
-        $this->db->select('r.*');
-        $this->db->from('trainingcenter as r');
-        $this->db->order_by("r.id", "ASC");
-        $query = $this->db->get();
-        $result = $query->result();
-        return $result;
-    }
 }

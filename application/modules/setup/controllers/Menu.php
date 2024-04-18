@@ -10,11 +10,11 @@ class Menu extends BaseController
         if (!$this->checkAccess('setup.role')) {
             $this->loadAccessRestricted();
         }
-    }
+        $this->global['code'] = 'setup.menu';
+    } 
 
     function list()
     {
-        $this->global['code'] = 'setup.menu';
         $name = $this->security->xss_clean($this->input->post('name'));
         $parent_id = $this->security->xss_clean($this->input->post('parent_id'));
         $data['searchParam'] = $name;
@@ -27,7 +27,6 @@ class Menu extends BaseController
 
     function edit($id = NULL)
     {
-        $this->global['code'] = 'setup.menu';
         if ($id == null) {
             redirect('/setup/menu/list');
         }
@@ -59,7 +58,6 @@ class Menu extends BaseController
 
     function add()
     {
-        $this->global['code'] = 'setup.menu';
         if ($this->input->post()) {
             $name = $this->security->xss_clean($this->input->post('name'));
             $parent_id = $this->security->xss_clean($this->input->post('parent_id'));

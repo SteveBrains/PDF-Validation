@@ -10,11 +10,11 @@ class User extends BaseController
         if (!$this->checkAccess('setup.user')) {
             $this->loadAccessRestricted();
         }
+        $this->global['code'] = 'setup.user';
     }
-
+ 
     function list()
     {
-        $this->global['code'] = 'setup.user';
         try {
             $name = $this->security->xss_clean($this->input->post('name'));
             $email = $this->security->xss_clean($this->input->post('email'));
@@ -32,10 +32,8 @@ class User extends BaseController
 
     function add()
     {
-        $this->global['code'] = 'setup.user';
         if ($this->input->post()) {
-            $first_name = ucwords(strtolower($this->security->xss_clean($this->input->post('first_name'))));
-            $last_name = ucwords(strtolower($this->security->xss_clean($this->input->post('last_name'))));
+            $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
             $email = strtolower($this->security->xss_clean($this->input->post('email')));
             $password = $this->input->post('password');
             $roleId = $this->input->post('role');
@@ -43,53 +41,48 @@ class User extends BaseController
             $userInfo = array(
                 'email' => $email,
                 'password' => md5($password),
-                'first_name' => $first_name,
-                'last_name' => $last_name,
+                'name' => $name,
                 'mobile' => $mobile,
                 'role' => $roleId,
-                'status' => 1,
             );
             $this->user_model->addUser($userInfo);
-            redirect('/setup/user/list');
+            redirect('/user/list');
         }
         $data['roleList'] = $this->user_model->getRoles();
+        $this->global['pageTitle'] = 'Inventory : Add User';
         $this->loadViews("user/add", $this->global, $data, NULL);
-        $this->loadViews("user/add", $this->global, NULL, NULL);
     }
 
     function edit($userId = NULL)
     {
-        $this->global['code'] = 'setup.user';
         if ($userId == null) {
-            redirect('/setup/user/list');
+            redirect('/user/list');
         }
         if ($this->input->post()) {
-            $first_name = ucwords(strtolower($this->security->xss_clean($this->input->post('first_name'))));
-            $last_name = ucwords(strtolower($this->security->xss_clean($this->input->post('last_name'))));
+            $name = ucwords(strtolower($this->security->xss_clean($this->input->post('fname'))));
             $mobile = $this->security->xss_clean($this->input->post('mobile'));
             $password = $this->security->xss_clean($this->input->post('password'));
             $roleId = $this->input->post('role');
             if ($password != '') {
                 $userInfo = array(
-                    'first_name' => $first_name,
-                    'last_name' => $last_name,
+                    'name' => $name,
                     'mobile' => $mobile,
                     'role' => $roleId,
                     'password' => md5($password),
                 );
             } else {
                 $userInfo = array(
-                    'first_name' => $first_name,
-                    'last_name' => $last_name,
+                    'name' => $name,
                     'mobile' => $mobile,
                     'role' => $roleId,
                 );
             }
             $this->user_model->editUser($userInfo, $userId);
-            redirect('/setup/user/list');
+            redirect('/user/list');
         }
-        $data['roleList'] = $this->user_model->getRoles();
         $data['userInfo'] = $this->user_model->getUser($userId);
+        $data['roleList'] = $this->user_model->getRoles();
+        $this->global['pageTitle'] = 'Inventory : Edit User';
         $this->loadViews("user/edit", $this->global, $data, NULL);
     }
     function logout()
@@ -115,18 +108,16 @@ class User extends BaseController
     function profile()
     {
         if ($this->input->post()) {
-            $first_name = ucwords(strtolower($this->security->xss_clean($this->input->post('first_name'))));
-            $last_name = ucwords(strtolower($this->security->xss_clean($this->input->post('last_name'))));
+            $name = $this->security->xss_clean($this->input->post('name'));
             $email = $this->security->xss_clean($this->input->post('email'));
             $mobile = $this->security->xss_clean($this->input->post('mobile'));
             $userInfo = array(
-                'first_name' => $first_name,
-                'last_name' => $last_name,
+                'name' => $name,
                 'mobile' => $mobile,
                 'email' => $email,
             );
             $this->user_model->editUser($userInfo, $_SESSION['userId']);
-            redirect('/setup/user/profile');
+            redirect('/user/profile');
         }
         $data['userInfo'] = $this->user_model->getUser($_SESSION['userId']);
         $this->loadViews("user/profile", $this->global, $data, NULL);
@@ -139,8 +130,8 @@ class User extends BaseController
                 'password' => md5($password),
             );
             $this->user_model->editUser($userInfo, $_SESSION['userId']);
-            redirect('/setup/user/profile');
+            redirect('/user/profile');
         }
-        redirect('/setup/user/profile');
+        redirect('/user/profile');
     }
 }

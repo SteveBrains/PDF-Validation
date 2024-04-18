@@ -18,14 +18,8 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label>First Name <span class='error-text'>*</span></label>
-                            <input type="text" class="form-control" id="first_name" name="first_name" value="<?php echo $userInfo->first_name; ?>">
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label>Last Name <span class='error-text'>*</span></label>
-                            <input type="text" class="form-control" id="last_name" name="last_name" value="<?php echo $userInfo->last_name; ?>">
+                            <label>Full Name <span class='error-text'>*</span></label>
+                            <input type="text" class="form-control" id="fname" name="fname" value="<?php echo $userInfo->name; ?>">
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -40,17 +34,18 @@
                             <input type="text" class="form-control" id="mobile" name="mobile" value="<?php echo $userInfo->mobile; ?>">
                         </div>
                     </div>
-
+                </div>
+                <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <input type="password" class="form-control" id="password" name="password" >
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label>Confirm Password</label>
-                            <input type="password" class="form-control" id="cpassword" name="cpassword">
+                            <input type="password" class="form-control" id="cpassword" name="cpassword" >
                         </div>
                     </div>
                     <div class="col-sm-4">

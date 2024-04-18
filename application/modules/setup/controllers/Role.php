@@ -9,11 +9,11 @@ class Role extends BaseController
         if (!$this->checkAccess('setup.role')) {
             $this->loadAccessRestricted();
         }
+        $this->global['code'] = 'setup.role';
     }
 
     function list()
     {
-        $this->global['code'] = 'setup.role';
         $name = $this->security->xss_clean($this->input->post('name'));
         $data['searchParam'] = $name;
         $data['roleList'] = $this->role_model->getRoles($data);
@@ -23,7 +23,6 @@ class Role extends BaseController
 
     function edit($id = NULL)
     {
-        $this->global['code'] = 'setup.role';
         if ($id == null) {
             redirect('/setup/role/list'); 
         }
@@ -81,7 +80,6 @@ class Role extends BaseController
     }
     function add()
     {
-        $this->global['code'] = 'setup.role';
         if ($this->input->post()) {
             $name = $this->security->xss_clean($this->input->post('role'));
             $status = $this->security->xss_clean($this->input->post('status'));

@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>College Management</title>
+  <title>Centralized Student Placement Management</title>
   <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/assets/css/adminmain.css" />
 </head>
@@ -15,7 +15,7 @@
     <div class="container-fluid">
       <div class="login-new-container d-flex align-items-center">
         <form action="" method="post">
-          <div class="brand-logo">College Management</div>
+          <div class="brand-logo">Centralized Student Placement Management</div>
           <h3><strong>Sign In</strong><br /></h3>
           <?php
           $this->load->helper('form');

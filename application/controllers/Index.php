@@ -20,10 +20,9 @@ class Index extends BaseController
 
     public function index()
     {
+
         $formData = $this->input->post();
         if ($formData) {
-            
-           
             $this->load->library('form_validation');
             $this->form_validation->set_rules('password', 'Password', 'required|max_length[32]');
             if ($this->form_validation->run() == FALSE) {
@@ -32,7 +31,6 @@ class Index extends BaseController
 
                 $email = strtolower($this->security->xss_clean($this->input->post('email')));
                 $password = $this->input->post('password');
-
                 $result = $this->login_model->loginAdmin($email, md5($password));
 
                 if (!empty($result)) {
@@ -44,8 +42,6 @@ class Index extends BaseController
                 }
             }
         } else {
-
-
             $this->load->view('user/index');
         }
     }
@@ -77,7 +73,7 @@ class Index extends BaseController
         // echo "<pre>";print_r($menu);die;
         $this->login_model->lastLogin($loginInfo);
         redirect('/' . $menu->module . '/' . $menu->controller . '/' . $menu->action);
-        // redirect('/setup/user/list');
+        // redirect('/setup/user/list'); 
     }
     function logout()
     {

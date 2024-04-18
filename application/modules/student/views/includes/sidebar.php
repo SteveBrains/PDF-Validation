@@ -14,8 +14,10 @@ $menuList  = $roleModel->getMenuByModules($urlmodule);
   <div class="sidebar-nav">
     <ul class="collapse in" id="placements" aria-expanded="true">
       <li>
-        <a href="/student/index">Subjects </a>
-        <a href="/student/fee/index">Fee </a>
+        <a href="/student/index/profile">Profile </a>
+        <a href="/student/index">Placements </a>
+        <a href="/student/index/result">Exam Result </a>
+        <a href="/student/index/resume">Resume Builder </a>
       </li>
     </ul>
   </div>
